@@ -1,0 +1,43 @@
+server:
+  port: 9999
+  # context-root
+  servlet:
+    context-path: /jwt
+
+# DataBase Settings
+spring:
+  datasource:
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 5000
+      connection-init-sql: SELECT 1
+      validation-timeout: 2000
+      minimum-idle: 10
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      auto-commit: true
+    # MySQL Setting
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/security?serverTimezone=UTC&useUniCode=yes&characterEncoding=UTF-8
+    username: junhyxxn
+    password: 9999
+    # DataSource
+    type: org.apache.commons.dbcp2.BasicDataSource
+
+#MyBatis Setting
+mybatis:
+  type-aliases-package: com.home.vo.**
+  mapper-locations: classpath:/mapper/*.xml
+
+
+#log level Setting
+logging.root: info
+logging.level.com.ssafy: debug
+
+### JWT setting
+#jwt.header: Authorization
+#jwt.secret: 3d76dffe92617453122bc2a64e266ee59eabf8a35ad948f8d4aaf842e9b49b05d6a78868b73f11c4d93a8635fd0586b89e43a8524aad992101da0317aa837d25
+### Access Token - Test : 60 ( 1 min ) Normal : 1800 ( 30 min )
+#jwt.accesstoekn-validity-in-seconds: 1800
+### Refresh Token - Test : 180 ( 3 min ) Normal : 604800 ( 7 days )
+#jwt.refreshtoekn-validity-in-seconds: 604800
