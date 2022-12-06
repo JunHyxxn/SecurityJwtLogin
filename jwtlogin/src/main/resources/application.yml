@@ -32,12 +32,13 @@ mybatis:
 
 #log level Setting
 logging.root: info
-logging.level.com.ssafy: debug
+logging.level.com.jwt: debug
 
-### JWT setting
-#jwt.header: Authorization
-#jwt.secret: 3d76dffe92617453122bc2a64e266ee59eabf8a35ad948f8d4aaf842e9b49b05d6a78868b73f11c4d93a8635fd0586b89e43a8524aad992101da0317aa837d25
-### Access Token - Test : 60 ( 1 min ) Normal : 1800 ( 30 min )
-#jwt.accesstoekn-validity-in-seconds: 1800
-### Refresh Token - Test : 180 ( 3 min ) Normal : 604800 ( 7 days )
-#jwt.refreshtoekn-validity-in-seconds: 604800
+## JWT setting
+jwt:
+  header: Authorization
+  secret: TXlTZWNyZXRLZXlJc1ZlcnlJbXBvcnRhbnRJdElzVG9wU2VjcmV0UGxlYXNlVXNlRW5jb2RlZFZhbHVl
+  ## Access Token - Test : 60 ( 1 min ) Normal : 1800 ( 30 min )
+  accesstoken-validity-in-seconds: 1800
+  ## Refresh Token - Test : 180 ( 3 min ) Normal : 604800 ( 7 days )
+  refreshtoken-validity-in-seconds: 604800
